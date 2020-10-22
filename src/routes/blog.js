@@ -16,16 +16,16 @@ router.get('/profile/:userName/:pageIndex', async(ctx,next) => {
 router.get('/list' ,async (ctx,next) => {
   let author = ctx.query.author
   const keyword = ctx.query.keyword
-  if(ctx.query.isadmin) {
-    // 自动将cookie携带的信息，去session换取
-    console.log('ctx.session.username:', ctx.session.username)
-    if(ctx.session.username == null) {
-      // 未登录
-      ctx.body = new ErrorResModel('未登录哦')
-      return
-    }
-    author = ctx.session.username
-  }
+  // if(ctx.query.isadmin) {
+  //   // 自动将cookie携带的信息，去session换取
+  //   console.log('ctx.session.username:', ctx.session.username)
+  //   if(ctx.session.username == null) {
+  //     // 未登录
+  //     ctx.body = new ErrorResModel('未登录哦')
+  //     return
+  //   }
+  //   author = ctx.session.username
+  // }
   const blogList = await getList(author,keyword)
   ctx.body = new SuccessResModel(blogList,'获取列表成功')
 })

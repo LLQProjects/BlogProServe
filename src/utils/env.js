@@ -2,7 +2,7 @@
  *  @description 环境变量
  *  @author llq
  */
-const env = proceee.env.NODE_ENV
+const env = process.env.NODE_ENV
 
 module.exports = {
   isDev: env === 'dev',

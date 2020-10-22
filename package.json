@@ -6,7 +6,8 @@
     "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon --inspect=9229 bin/www",
     "prd": "cross-env NODE_ENV=production pm2 start pm2.conf.json",
     "lint": "eslint --ext .js ./src",
-    "test": "cross-env NODE_ENV=test jest --runInBand --forceExit --colors"
+    "test": "cross-env NODE_ENV=test jest --runInBand --forceExit --colors",
+    "seq": "cross-env NODE_ENV=dev node ./src/controller/create.js"
   },
   "dependencies": {
     "ajv": "^6.10.2",
@@ -40,7 +41,7 @@
     "pre-commit": "^1.2.2",
     "supertest": "^4.0.2"
   },
-  "pre-commit": [ //git之前先lint
+  "pre-commit": [ 
     "lint"
   ]
 }

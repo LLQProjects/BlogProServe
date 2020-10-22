@@ -1,17 +1,13 @@
 const { exec } = require('../db/mysql')
+const { Blog, User } = require('../db/seq')
 
 // 获取博客列表
 const getList = async (author,keyword) => {
-    let sql = `select * from blogs where 1=1 `
-    if(author) {
-        sql += `and author='${author}' `
-    }
-    if(keyword) {
-        sql += `and title='%${keyword}&' `
-    }
-    sql += `order by createtime desc`
+    const list = await Blog.findAll({
+        
+    })
     // promise
-    return await exec(sql)
+    return list
 }
 // 获取详情
 const getDetail = async (id) => {
