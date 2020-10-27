@@ -1,5 +1,5 @@
 const { exec } = require('../db/mysql')
-const { Blog, User } = require('../db/seq')
+const { Blog, User } = require('../db/seqInit')
 
 // 获取博客列表
 const getList = async (author,keyword) => {

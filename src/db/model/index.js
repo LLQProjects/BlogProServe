@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const seq = require('../db/seq')
+const seq = require('./seq')
 // const seq = new Sequelize()
 
 // 创建 user 模型

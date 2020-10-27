@@ -1,4 +1,4 @@
-const {User , Blog} = require('./seqInit')
+const {User , Blog} = require('../db/seqInit')
 
 // 增删改查：创建
 
@@ -14,7 +14,7 @@ const {User , Blog} = require('./seqInit')
 !(async function () {
   const userllq = await Blog.create({
     userId: '1',
-    content: '这是一篇博客',
+    content: '这是一篇博客2',
     image: 'xxxx'
   })
 })()

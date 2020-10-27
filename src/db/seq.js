@@ -19,15 +19,5 @@ if(isProd) {
 }
 
 const seq = new Sequelize(MYSQL_CONF.database,MYSQL_CONF.user,MYSQL_CONF.password,conf)
-// 连接数据库
-seq.authenticate().then(() => {
-  console.log('ok')
-}).catch(() => {
-  console.log('err')
-})
-// 退出
-seq.sync({force: true}).then(() => {
-  console.log('sync ok')
-  process.exit()
-})
+
 module.exports = seq
