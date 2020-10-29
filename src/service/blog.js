@@ -13,5 +13,5 @@
   */
 
   const getListData = async (num) => {
-
+    
   }

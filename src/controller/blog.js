@@ -7,11 +7,11 @@
 const { Blog, User } = require('../db/model')
 
 // 获取博客列表
-const getList = async (author,keyword) => {
+const getList = async (author, keyword) => {
     const list = await Blog.findAll({
-      include: {
-          mode: User
-      }  
+        include: {
+            mode: User
+        }
     })
     // promise
     return list
@@ -47,7 +47,7 @@ const updateBlog = async (blogData) => {
         update blogs set title='${title}', content='${content}' where id = ${id}
     `
     const updateData = await exec(sql)
-    if(updateData) {
+    if (updateData) {
         return updateData.affectedRows > 0
     }
 }
