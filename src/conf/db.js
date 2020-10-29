@@ -1,12 +1,12 @@
 const env = process.env.NODE_ENV  //获取环境变量
 
 // mysql 连接配置
-let MYSQL_CONF;
-let REDIS_CONF;
+let MYSQL_CONF
+let REDIS_CONF
 let host = 'rds2ivze3ynj3ueo.mysql.rds.aliyuncs.com'
 // nginx : 8099
 
-if(env === 'dev') {
+if (env === 'dev') {
     // mysql
     MYSQL_CONF = {
         host: host,
@@ -22,7 +22,7 @@ if(env === 'dev') {
     }
 }
 
-if(env === 'production') {
+if (env === 'production') {
     // mysql
     MYSQL_CONF = {
         host: host,
@@ -33,6 +33,7 @@ if(env === 'production') {
     }
     // redis
     REDIS_CONF = {
+
         host: '127.0.0.1',
         port: 6379
     }

@@ -23,34 +23,35 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+    enableTypes: ['json', 'form', 'text']
 }))
 // session配置
 app.keys = ['#jfsd123']
+
 app.use(session({
-  //  配置
-  cookie: {
-    path: '/',
-    httpOnly: true, //js无法更改httpOnly
-    maxAge: 24*60*60*1000
-  },
-  store: redisStore({
-    all: `${REDIS_CONF.host}:${REDIS_CONF.port}` //redis  地址
-  })
+    //  配置
+    cookie: {
+        path: '/',
+        httpOnly: true, //js无法更改httpOnly
+        maxAge: 24 * 60 * 60 * 1000
+    },
+    store: redisStore({
+        all: `${REDIS_CONF.host}:${REDIS_CONF.port}` //redis  地址
+    })
 }))
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 
 app.use(views(__dirname + '/views', {
-  extension: 'pug'
+    extension: 'pug'
 }))
 
 // logger
 app.use(async (ctx, next) => {
-  await next()
-  const ms = new Date() 
-  console.log(`${ctx.method} ${ctx.url} - ${ms}`)
+    await next()
+    const ms = new Date()
+    console.log(`${ctx.method} ${ctx.url} - ${ms}`)
 })
 
 // routes
@@ -59,7 +60,7 @@ app.use(blog.routes(), blog.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
-});
+    console.error('server error', err, ctx)
+})
 
 module.exports = app

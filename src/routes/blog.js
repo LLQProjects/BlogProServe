@@ -27,7 +27,6 @@ router.get('/list', async (ctx, next) => {
     //   }
     //   author = ctx.session.username
     // }
-
     const blogList = await getList(author, keyword)
     ctx.body = new SuccessResModel(blogList, '获取列表成功')
 })

@@ -17,4 +17,5 @@ const { User, Blog } = require('../db/model/index.js')
         image: 'xxxx'
 
     })
+
 })()

@@ -6,20 +6,19 @@
 const Sequelize = require('sequelize')
 const seq = require('../seq')
 
-const User = seq.define('user',{
-  // id自动创建
-  userName:{
-    type: Sequelize.STRING, //varchat(255)
-    allowNull: false
-  },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false 
-  },
-  nickName: {
-    type: Sequelize.STRING,
-    comment: '昵称' //描述
-  }
+const User = seq.define('user', {
+    // id自动创建
+    userName: {
+        type: Sequelize.STRING, //varchat(255)
+        allowNull: false
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    nickName: {
+        type: Sequelize.STRING,
+        comment: '昵称' //描述
+    }
 })
-
 module.exports = User
