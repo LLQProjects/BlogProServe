@@ -14,7 +14,7 @@
               "allowTemplateLiterals": true
             }
         ],
-        "semi": [
+        "semi": [  
             "error",
             "never"
         ]

@@ -6,7 +6,7 @@ const  loginCheck  = require('../middleware/loginCheck')
 
 
 const router = new Router()
-router.prefix('/api/blog')
+router.prefix('/blog')
 // 动态路由
 router.get('/profile/:userName/:pageIndex', async(ctx,next) => {
   const { userName } = ctx.params

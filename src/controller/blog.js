@@ -1,10 +1,17 @@
+/**
+ * @description  逻辑控制层 ： 关于博客数据的业务逻辑处理
+ * @author 林连强
+ */
+
 // const { exec } = require('../db/mysql')
 const { Blog, User } = require('../db/model')
 
 // 获取博客列表
 const getList = async (author,keyword) => {
     const list = await Blog.findAll({
-        
+      include: {
+          mode: User
+      }  
     })
     // promise
     return list
