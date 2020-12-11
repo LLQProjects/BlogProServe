@@ -3,19 +3,13 @@
  * @author 林连强
  */
 
-// const { exec } = require('../db/mysql')
-const { Blog, User } = require('../db/model')
+const {
+    getListData
+} = require('../service/blog')
 
 // 获取博客列表
 const getList = async (author, keyword) => {
-    const list = await Blog.findAll({
-        include: {
-            mode: User
-        }
-    })
-    // promise
-    return list
-
+    return await getListData()
 }
 // 获取详情
 const getDetail = async (id) => {

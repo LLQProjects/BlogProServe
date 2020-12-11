@@ -17,6 +17,7 @@ router.get('/profile/:userName/:pageIndex', async (ctx, next) => {
 router.get('/list', async (ctx, next) => {
     let author = ctx.query.author
     const keyword = ctx.query.keyword
+    console.log('ctx', ctx.session)
     // if(ctx.query.isadmin) {
     //   // 自动将cookie携带的信息，去session换取
     //   console.log('ctx.session.username:', ctx.session.username)

@@ -9,7 +9,6 @@ const { User, Blog } = require('./seqInit')
             password: '123456'
         }
     })
-    console.log('search_user:', userllq.nickName)
 
     // 查询特定的列: userName,nickName
     const userllqName = await User.findOne({
@@ -18,7 +17,7 @@ const { User, Blog } = require('./seqInit')
             userName: 'llq123'
         }
     })
-    console.log('userLlqName:', userllqName.dataValues.userName)
+
     // 查询列表
     const userAll = await Blog.findAll({
         where: {
@@ -56,7 +55,7 @@ const { User, Blog } = require('./seqInit')
             ['id', 'desc']
         ],
         include: {
-            mode: User,
+            model: User,
             attribute: ['userName', 'nickName'],
             where: {
                 userName: 'zhangsan'

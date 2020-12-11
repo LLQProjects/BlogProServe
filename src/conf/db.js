@@ -6,6 +6,22 @@ let REDIS_CONF
 let host = 'rds2ivze3ynj3ueo.mysql.rds.aliyuncs.com'
 // nginx : 8099
 
+//临时测试，需要删除
+if (true) {
+    // mysql
+    MYSQL_CONF = {
+        host: host,
+        user: 'linlq',
+        password: 'Linlianqiang',
+        port: '3306',
+        database: 'linlq'
+    }
+    // redis
+    REDIS_CONF = {
+        host: '127.0.0.1',
+        port: 6379
+    }
+}
 if (env === 'dev') {
     // mysql
     MYSQL_CONF = {

@@ -28,6 +28,7 @@ app.use(bodyparser({
 // session配置
 app.keys = ['#jfsd123']
 
+//请求自动携带cookie（sessionid），如果redis中有对应的值，即该用户已登录。
 app.use(session({
     //  配置
     cookie: {
@@ -51,7 +52,7 @@ app.use(views(__dirname + '/views', {
 app.use(async (ctx, next) => {
     await next()
     const ms = new Date()
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`)
+    // console.log(`${ctx.method} ${ctx.url} - ${ms}`)
 })
 
 // routes
